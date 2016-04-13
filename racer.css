@@ -1,9 +1,25 @@
-.racer_table td {
-  background-color: white;
-  height: 20px;
-  width: 20px;
+body {
+  background-color: #f3f3f3;
 }
 
+
+.racer_table td, th {
+  background-color: white;
+  height: 60px;
+  width: 60px;
+  border: 2px solid #73AD21;
+  border-radius: 40px;
+}
+
+
 .racer_table td.active {
-  background-color: black;
+  background-color: #73AD21;
+}
+
+
+table {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
