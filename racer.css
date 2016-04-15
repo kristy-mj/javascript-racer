@@ -34,3 +34,24 @@ table {
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+
+.button-container {
+  position: fixed;
+  top: 75%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+    
+}
+
+button {
+    background-color: #607D86;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
