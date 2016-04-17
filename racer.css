@@ -1,6 +1,9 @@
 body {
   background-color: #f3f3f3;
+  font-family: Helvetica;
+  color: #3A535D;
 }
+
 
 .instructions {
   position: fixed;
@@ -9,22 +12,33 @@ body {
   transform: translate(-50%, -50%);
 }
 
-h2, h3 {
-  font-weight: normal;
-  font-family: arial;
-}
 
 .racer_table td {
-  background-color: white;
   height: 60px;
   width: 60px;
-  border: 2px solid #73AD21;
   border-radius: 40px;
 }
 
 
-.racer_table td.active {
-  background-color: #73AD21;
+#player1_strip {
+  background-color: white;
+  border: 2px solid #C9CE06;
+}
+
+
+#player1_strip td.active {
+  background-color: #C9CE06;
+}
+
+
+#player2_strip {
+  background-color: white;
+  border: 2px solid #D42383;
+}
+
+
+#player2_strip td.active {
+  background-color: #D42383;
 }
 
 
@@ -41,9 +55,9 @@ table {
   top: 75%;
   left: 50%;
   transform: translate(-50%, -50%);
-  display: none;
-    
+  display: none;  
 }
+
 
 button {
     background-color: #607D86;
@@ -54,4 +68,5 @@ button {
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
+    font-family: arial;
 }
