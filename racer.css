@@ -1,15 +1,15 @@
 body {
   background-color: #f3f3f3;
-  font-family: Helvetica;
+  font-family: 'Shadows Into Light Two', cursive;
   color: #3A535D;
+  font-weight: 800;
 }
 
-
-.instructions {
+.container {
   position: fixed;
-  top: 20%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: 5%;
+  left: 5%;
+  width: 10%;
 }
 
 
@@ -20,33 +20,41 @@ body {
 }
 
 
-#player1_strip {
+.player {
   background-color: white;
-  border: 2px solid #C9CE06;
 }
 
 
-#player1_strip td.active {
+.player td.active {
   background-color: #C9CE06;
 }
 
 
-#player2_strip {
-  background-color: white;
-  border: 2px solid #D42383;
+.player:nth-child(1) td.active {
+  background-color: #D3D800;
 }
-
-
-#player2_strip td.active {
+.player:nth-child(2) td.active {
   background-color: #D42383;
+}
+.player:nth-child(3) td.active {
+  background-color: #059CAD;
+}
+.player:nth-child(4) td.active {
+  background-color: #3FE081;
+}
+.player:nth-child(5) td.active {
+  background-color: #FF931F;
+}
+.player:nth-child(6) td.active {
+  background-color: #6F016F;
 }
 
 
 table {
   position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: 20%;
+  left: 18%;
+  width: 60%;
 }
 
 
@@ -55,7 +63,8 @@ table {
   top: 75%;
   left: 50%;
   transform: translate(-50%, -50%);
-  display: none;  
+  display: none; 
+  padding: 10px;
 }
 
 
@@ -63,10 +72,18 @@ button {
     background-color: #607D86;
     border: none;
     color: white;
-    padding: 15px 32px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-    font-family: arial;
+    border-radius: 10px;
+    margin: 5px;
+}
+
+
+.setValues {
+  width: 10%;
+  position: fixed;
+  top: 5%;
+  left: 80%;
 }

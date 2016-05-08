@@ -4,48 +4,40 @@
   <title>JavaScript Racer</title>
   <link type="text/css" rel="stylesheet" href="normalize.css" />
   <link href="racer.css" rel="stylesheet" type="text/css">
+
+  <link href='https://fonts.googleapis.com/css?family=Shadows+Into+Light+Two' rel='stylesheet' type='text/css'>
   
 </head>
 
 <body>
-<div class="instructions">
-  <h2>Want to race?</h2>
-  <h4>Press 'Q' to advance Mrs Yellow</h4>
-  <h4>Press 'P' to advance Mrs Pink</h4>
-</div>
-<table class="racer_table">
-  <tr id="player1_strip">
-    <td class="active" ></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr id="player2_strip">
-    <td class="active"></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
-</table>
+<div class= "container">
+  <div class="instructions">
+    <h2>Want to race?</h2>
+    <div class="racerinfo">
+    </div>
+  </div>
+  <div class="setValues">
+    <div class="track-btns">
+      <p>Length of Track</p>
+      <button onclick=increase("track")>+</button>
+      <button onclick=decrease("track")>-</button>
+    </div>
+      <p>Number of Players</p>
+      <div class="player-btns">
+      <button onclick=increase("player")>+</button>
+      <button onclick=decrease("player")>-</button>
+    </div>
 
-<div id="btn-play-again" class="button-container">
-  <button onclick=playAgainClick()>Play Again?</button>
-</div>
+  <table class="racer_table">
+  </table>
 
+  <div id="btn-play-again" class="button-container">
+    <button onclick=playAgainClick()>Play Again?</button>
+  </div>
+</div>
 </body>
 </html>
 
+<script src="jQuery.js" type="text/javascript"></script>
 <script src="racer.js" type="text/javascript"></script>
 

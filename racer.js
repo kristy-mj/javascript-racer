@@ -1,25 +1,97 @@
-/*// Find a <table> element with id="myTable":
-var table = document.getElementsByClassName('racer_table');
-
-// Create an empty <tr> element and add it to the 1st position of the table:
-var row = table.insertRow(0);
-
-// Insert new cells (<td> elements) at the 1st and 2nd position of the "new" <tr> element:
-var cell1 = row.insertCell(0);
-var cell2 = row.insertCell(1);
-
-// Add some text to the new cells:
-cell1.innerHTML = "NEW CELL1";
-cell2.innerHTML = "NEW CELL2";
-
-var lengthOfTrack = 30*/
+var defaultTrack = 5;
+var players = 1;
 
 
-var player1 = document.getElementById('player1_strip')
-var player2 = document.getElementById('player2_strip')
+function updateInstructions (numOfPlayers) {
+  var letters = [
+    {
+      buttonletter:'Q',
+      name: 'Mrs Yellow'
+    },
+    {
+      buttonletter:'P',
+      name: 'Mrs Pink'
+    },
+     {
+      buttonletter:'F',
+      name: 'Mrs Blue'
+    },
+    {
+      buttonletter:'L',
+      name: 'Mrs Green'
+    },
+    {
+      buttonletter:'Z',
+      name: "Mrs Orange"
+    },
+    {
+      buttonletter:'M',
+      name: "Mrs Purple"
+    }];
+  var instructionsHtml = '';
+  for (var i = 0; i < numOfPlayers; i++) {
+    instructionsHtml += '<h4>Press ' + letters[i].buttonletter + ' to advance ' + letters[i].name + '</h4>';
+  }
+  $('.racerinfo').html(instructionsHtml);
+}
 
-var Q = 81
-var P = 80
+
+function createTrack(trackLength, numOfPlayers) {
+
+var trackHtml = '';
+  for (var x = 0; x < numOfPlayers; x++) {  
+    var playerId = 'player' + (x + 1);
+    trackHtml += '<tr class="player" id="' + playerId + '">';
+
+    for (var i = 0; i < trackLength; i++) {
+      if (i === 0) {
+        trackHtml += '<td class="active"></td>';
+      }
+      else {
+        trackHtml += '<td></td>';
+      }
+    }
+    trackHtml += '</tr>';
+  }
+  $('.racer_table').html(trackHtml);
+  updateInstructions(numOfPlayers);
+}
+$(document).ready(createTrack(defaultTrack, players));
+
+
+function increase(type) {
+  if (type === 'track') {
+    if (defaultTrack < 20) {
+    defaultTrack += 1;
+    }
+  }
+  else if (type === 'player') {
+    if (players < 6) {
+      players += 1;
+    }
+  }
+  createTrack(defaultTrack, players);
+}
+
+
+function decrease(type) {
+  if (type === 'track') {
+    defaultTrack -= 1;
+  }
+  else if (type === 'player') {
+    players -= 1;
+  }
+  createTrack(defaultTrack, players);
+}
+
+
+var Q = 81;
+var P = 80;
+var F = 70;
+var L = 76;
+var Z = 90;
+var M = 77;
+
 var isGameOver = false
 var playAgainButton = document.getElementById('btn-play-again')
 
@@ -47,19 +119,37 @@ var updatePlayerPosition = function (player, playerName) {
 document.addEventListener('keyup', function (event) {
   switch (event.keyCode) {
     case Q: 
-     updatePlayerPosition(player1, 'Player One');
+     var player1 = document.getElementById('player1')
+     updatePlayerPosition(player1, 'Mrs Yellow');
       break;
     case P:
-      updatePlayerPosition(player2, 'Player Two');
+      var player2 = document.getElementById('player2')
+      updatePlayerPosition(player2, 'Mrs Pink');
+      break;
+    case F: 
+      var player3 = document.getElementById('player3')
+      updatePlayerPosition(player3, 'Mrs Blue');
+      break;
+    case L: 
+      var player4 = document.getElementById('player4')
+      updatePlayerPosition(player4, 'Mrs Green');
+      break;
+    case Z: 
+      var player5 = document.getElementById('player5')
+      updatePlayerPosition(player5, 'Mrs Orange');
+      break;
+    case M: 
+      var player6 = document.getElementById('player6')
+      updatePlayerPosition(player6, 'Mrs Purple');
       break;
   }
 });
 
- var showButton = function () {
-  if (isGameOver === 1) {
-    playAgainButton.style.display = 'block'
+  var showButton = function () {
+    if (isGameOver === 1) {
+      playAgainButton.style.display = 'block'
+    }
   }
- }
  var playAgainClick = function () {
   window.location.reload();
  }
